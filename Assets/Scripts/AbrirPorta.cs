@@ -8,6 +8,8 @@ public class AbrirPorta : MonoBehaviour {
 	public GameObject acaoDisplay; // hud tecla de ação.
 	public GameObject acaoTxt; // hud da exibição da ação.
 	public GameObject porta; // gameObject da porta.
+	public GameObject crosshair;
+	public GameObject extraCross;
 	public AudioSource rangerSom; // som de abertura da porta.
 
 	// Update is called once per frame
@@ -17,6 +19,9 @@ public class AbrirPorta : MonoBehaviour {
 	}
 	void OnMouseOver () { // quando o mouse está sobre o objeto.
 		if (distancia <= 2) {
+			extraCross.SetActive(true);
+			crosshair.SetActive(false);
+
 			acaoDisplay.SetActive (true);
 			acaoTxt.SetActive (true);
 		}
@@ -36,6 +41,9 @@ public class AbrirPorta : MonoBehaviour {
 		}
 	}
 	void OnMouseExit () { // quando o mouse não está a frente do objeto.
+		extraCross.SetActive(false);
+		crosshair.SetActive(true);
+
 		acaoDisplay.SetActive (false);
 		acaoTxt.SetActive (false);
 	}
