@@ -11,6 +11,7 @@ public class AbrirPorta : MonoBehaviour {
 	public GameObject crosshair;
 	public GameObject extraCross;
 	public AudioSource rangerSom; // som de abertura da porta.
+	
 
 	// Update is called once per frame
 	void Update () {
@@ -21,7 +22,7 @@ public class AbrirPorta : MonoBehaviour {
 		if (distancia <= 2) {
 			extraCross.SetActive(true);
 			crosshair.SetActive(false);
-
+			acaoTxt.GetComponent<Text>().text = "Open Door";
 			acaoDisplay.SetActive (true);
 			acaoTxt.SetActive (true);
 		}
@@ -32,6 +33,7 @@ public class AbrirPorta : MonoBehaviour {
 				acaoTxt.SetActive (false);
 				porta.GetComponent<Animation>().Play("porta01anim"); // iniciando a animação da porta.
 				rangerSom.Play(); // iniciando o som.
+				
 			}
 			
 		}

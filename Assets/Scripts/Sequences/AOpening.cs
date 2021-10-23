@@ -19,7 +19,7 @@ public class AOpening : MonoBehaviour {
 		yield return new WaitForSeconds(1.5f); //Espera esse tempo
 
 		fadeScreenIn.SetActive(false); //Desativa FadeScreenIn
-		textBox.GetComponent<Text>().text = "What happened here?"; //Mostra o texto
+		textBox.GetComponent<Text>().text = "I'd like to read my book before bed..."; //Mostra o texto
 
 		yield return new WaitForSeconds(2); //Espera mais este tempo
 		textBox.GetComponent<Text>().text = ""; //Reseta o texto
