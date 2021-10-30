@@ -12,6 +12,7 @@ public class AbrirGaveta : MonoBehaviour {
 	public GameObject extraCross;
 	public AudioSource abrirSom; // som de abertura da porta.
 	public GameObject fxBrilhoItem;
+	public GameObject textBox;
 
 	// Update is called once per frame
 	void Update () {
@@ -56,10 +57,12 @@ public class AbrirGaveta : MonoBehaviour {
 
 	IEnumerator AcharLivro() //Rotina da intro do Jogador
 	{
-		yield return new WaitForSeconds(1.5f); //Espera esse tempo		
-		acaoTxt.GetComponent<Text>().text = "That's weird, my book isn't here. Where did you end up?"; //Mostra o texto
+		yield return new WaitForSeconds(1.5f); //Espera esse tempo	
+		textBox.GetComponent<Text>().text = "That's weird, my book isn't here. Where did you end up?"; //Mostra o texto
+		
 
 		yield return new WaitForSeconds(2); //Espera mais este tempo
-		acaoTxt.GetComponent<Text>().text = ""; //Reseta o texto		
+		textBox.GetComponent<Text>().text = ""; //Reseta o texto	
+		
 	}
 }
